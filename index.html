@@ -5,15 +5,49 @@
   src="https://rum.auditzy.com/NEOdEZrt-bnicoo.github.io-iar.js"
   async
 ></script>
-  
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demande de rappel - Télécom & Énergie</title>
+
+  <title>Demande de rappel - Télécom & Énergie | Voltis Connect</title>
   <meta
     name="description"
     content="Laissez vos coordonnées pour être recontacté rapidement concernant une offre télécom, énergie ou les deux."
   />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="fr_BE" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Voltis Connect" />
+  <meta property="og:title" content="Voltis Connect - Demande de rappel Télécom & Énergie" />
+  <meta
+    property="og:description"
+    content="Demandez à être recontacté rapidement pour une offre télécom, énergie ou les deux."
+  />
+  <meta property="og:url" content="https://bnicoo.github.io/formulairedecontact/" />
+  <meta
+    property="og:image"
+    content="https://bnicoo.github.io/formulairedecontact/voltis-connect-preview.jpg"
+  />
+  <meta property="og:image:secure_url" content="https://bnicoo.github.io/formulairedecontact/voltis-connect-preview.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo Voltis Connect" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Voltis Connect - Demande de rappel Télécom & Énergie" />
+  <meta
+    name="twitter:description"
+    content="Demandez à être recontacté rapidement pour une offre télécom, énergie ou les deux."
+  />
+  <meta
+    name="twitter:image"
+    content="https://bnicoo.github.io/formulairedecontact/voltis-connect-preview.jpg"
+  />
+
   <style>
     :root {
       --bg: #f4f7fb;
@@ -490,7 +524,6 @@
             </div>
           </div>
 
-          <!-- BLOC TELECOM -->
           <div id="blocTelecom" class="hidden">
             <div class="field">
               <label for="operateur_telecom">Opérateur télécom actuel</label>
@@ -511,7 +544,6 @@
             </div>
           </div>
 
-          <!-- BLOC ENERGIE -->
           <div id="blocEnergie" class="hidden">
             <div class="row">
               <div class="field">
@@ -552,7 +584,6 @@
             ></textarea>
           </div>
 
-          <!-- Champs cachés utiles -->
           <input type="hidden" name="_subject" value="Nouvelle demande de rappel - Télécom / Énergie" />
           <input type="hidden" name="_language" value="fr" />
 
@@ -575,32 +606,32 @@
   </main>
 
   <footer class="footer">
-  <div class="footer-card">
-    <h3>Protection des données</h3>
+    <div class="footer-card">
+      <h3>Protection des données</h3>
 
-    <p>
-      Les informations transmises via ce formulaire sont utilisées uniquement
-      dans le but de vous recontacter concernant votre demande en télécom
-      et/ou énergie.
-    </p>
+      <p>
+        Les informations transmises via ce formulaire sont utilisées uniquement
+        dans le but de vous recontacter concernant votre demande en télécom
+        et/ou énergie.
+      </p>
 
-    <p>
-      <strong>Responsable du traitement :</strong> Buscema Nicolas<br>
-      <strong>Contact :</strong>
-      <a href="https://wa.me/32471557138" target="_blank">
-        Contacter via WhatsApp
-      </a><br>
-      <span style="color:#16a34a; font-weight:600;">
-        Réponse rapide sur WhatsApp (généralement sous 1h)
-      </span>
-    </p>
+      <p>
+        <strong>Responsable du traitement :</strong> Buscema Nicolas<br>
+        <strong>Contact :</strong>
+        <a href="https://wa.me/32471557138" target="_blank">
+          Contacter via WhatsApp
+        </a><br>
+        <span style="color:#16a34a; font-weight:600;">
+          Réponse rapide sur WhatsApp (généralement sous 1h)
+        </span>
+      </p>
 
-    <p>
-      Vous pouvez demander à tout moment l’accès, la modification ou la suppression
-      de vos données en utilisant le lien de contact ci-dessus.
-    </p>
-  </div>
-</footer>
+      <p>
+        Vous pouvez demander à tout moment l’accès, la modification ou la suppression
+        de vos données en utilisant le lien de contact ci-dessus.
+      </p>
+    </div>
+  </footer>
 
   <script>
     const interet = document.getElementById("interet");
@@ -623,12 +654,10 @@
       blocTelecom.classList.toggle("hidden", !showTelecom);
       blocEnergie.classList.toggle("hidden", !showEnergie);
 
-      // Rend les champs requis seulement s'ils sont visibles
       operateurTelecom.required = showTelecom;
       region.required = showEnergie;
       fournisseurEnergie.required = showEnergie;
 
-      // Nettoie les champs masqués
       if (!showTelecom) {
         operateurTelecom.value = "";
       }
@@ -642,7 +671,6 @@
     interet.addEventListener("change", updateFields);
     updateFields();
 
-    // Soumission AJAX pour éviter la redirection brutale
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
